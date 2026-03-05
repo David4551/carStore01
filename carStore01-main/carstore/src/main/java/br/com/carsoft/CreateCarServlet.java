@@ -1,6 +1,5 @@
 package br.com.carsoft;
 
-import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -14,11 +13,12 @@ public class CreateCarServlet extends HttpServlet {
 
         String carName = request.getParameter("car-name");
 
-        // 2. Define o tipo de retorno como JSON e o encoding
+
         response.setContentType("application/json");
         response.setCharacterEncoding("UTF-8");
 
-        String jsonResponse = "{\"Carro " + carName + " registrado com sucesso!\"}";
+
+        String jsonResponse = "{\"message\": \"Carro " + carName + " registrado com sucesso!\"}";
 
         response.getWriter().write(jsonResponse);
     }
